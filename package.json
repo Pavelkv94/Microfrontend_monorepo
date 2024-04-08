@@ -36,11 +36,11 @@
     "webpack": "^5.91.0",
     "webpack-bundle-analyzer": "^4.9.1",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-dev-server": "^4.15.1",
+    "@svgr/webpack": "^8.1.0",
+    "fork-ts-checker-webpack-plugin": "^9.0.0"
   },
   "dependencies": {
-    "@svgr/webpack": "^8.1.0",
-    "fork-ts-checker-webpack-plugin": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0"
