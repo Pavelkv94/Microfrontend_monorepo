@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.base.json", //путь до базового конфига который мы расширяем
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "resolveJsonModule": true //чтобы импортировать в webpack.config.ts файл package.json
+
+  },
+
+}
