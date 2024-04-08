@@ -1,4 +1,5 @@
 Microfrontend
+```
 ├── packages
 │   ├── shared //весь переиспользуемый код(компоненты кнопки и тд.)
 │   ├── build-config //webpack конфигурация, как отдельный проект(npm init)
@@ -10,7 +11,7 @@ Microfrontend
 │   └── shop //микрофронт
 │           
 ├── package.json
-
+```
 
 запускать npm run start из каждого App внутри /services
 
