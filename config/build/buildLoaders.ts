@@ -1,4 +1,4 @@
-import { ModuleOptions } from "webpack";
+import { ModuleOptions, runtime } from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/types";
 import ReactRefreshTypeScript from "react-refresh-typescript";
@@ -53,5 +53,26 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
     exclude: /node_modules/, //то что не обрабатываем
   };
 
-  return [assetsLoader, scssLoader, tsLoader, svgLoader];
+
+  const babelLoader = {
+    test: /\.tsx?$/, //регулярка для расширений файлов
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        //  Если используем babel отдельно то создаем в корне конфиг babel.config.json и туда перемещаем опции
+        presets: ['@babel/preset-env', '@babel/preset-typescript', ['@babel/preset-react', {
+          runtime: isDev ? 'automatic' : 'classic'
+        }]]
+      }
+    }
+  }
+
+
+
+  return [assetsLoader, 
+    scssLoader, 
+    // tsLoader, 
+    babelLoader,
+    svgLoader];
 }
