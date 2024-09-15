@@ -1,4 +1,4 @@
-Microfrontend
+## Monorepo-Microfrontend
 ```
 ├── packages
 │   ├── shared //весь переиспользуемый код(компоненты кнопки и тд.)
